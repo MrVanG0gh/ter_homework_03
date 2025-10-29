@@ -100,6 +100,6 @@ variable "common_metadata" {
   default     = {
     serial-port-enable = "1"
     #ssh-keys           = "ubuntu:ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMnceZd2rCKdINN9bbS0QQ5X4mubdFaheN6XcNHbb+u4"
-    ssh-keys            = file("~/.ssh/id_ed25519.pub")
+    ssh-keys  = local.ssh_from_file
     }
 }
