@@ -5,7 +5,7 @@ resource "yandex_compute_instance" "db_replica" {
 
   name             = each.value.vm_name
   hostname         = each.value.vm_name
-  platform_id      = var.common_platform
+  platform_id      = "${ yandex_vpc_network.develop.name }--${ var.common_platform }"
   zone             = var.default_zone
 
   resources {
