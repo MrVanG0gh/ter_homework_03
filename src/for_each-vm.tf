@@ -4,7 +4,7 @@ resource "yandex_compute_instance" "db_replica" {
   for_each         = { for i in var.each_vm : i.vm_name => i }
 
   name             = each.value.vm_name
-  hostname         = yandex_vpc_network.develop.name-each.value.vm_name
+  hostname         = "${yandex_vpc_network.develop.name} - ${each.value.vm_name}"
   platform_id      = var.common_platform
   zone             = var.default_zone
 
