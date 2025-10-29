@@ -31,6 +31,6 @@ resource "yandex_compute_instance" "db_replica" {
     security_group_ids = [yandex_vpc_security_group.example.id]
   }
 
-  metadata = var.common_metadata
+  metadata = merge(var.common_metadata, local.metadata)
 
 }
