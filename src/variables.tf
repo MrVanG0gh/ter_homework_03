@@ -31,6 +31,12 @@ variable "vpc_name" {
 
 ### Vars for Ex.2
 
+variable "counter_vm" {
+  type        = number
+  default     = 2
+  description = "How many VM to create"
+}
+
 variable "web_cores" {
   type        = number
   default     = "2"
@@ -75,6 +81,24 @@ variable "each_vm" {
               ram         = 1
               disk_volume = 5
     }]
+}
+### Vars for Ex.4
+
+variable "vdisks" {
+  type = object({
+    name = string
+    counter = number
+    type = string
+    size = number
+  })
+
+  default = {
+    name = "vdisk"
+    counter = 3
+    type = "network-hdd"
+    size = 1
+  }
+  description = "Info about disks"
 }
 
 ### Common vars
