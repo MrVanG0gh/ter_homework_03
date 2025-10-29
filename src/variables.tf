@@ -1,9 +1,10 @@
 ###cloud vars
-variable "token" {
-  type        = string
+/* variable "token" {
+   type        = string
   default     = file("~/token")
   description = "OAuth-token; https://cloud.yandex.ru/docs/iam/concepts/authorization/oauth-token"
 }
+ */
 
 variable "cloud_id" {
   type        = string
