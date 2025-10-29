@@ -23,6 +23,11 @@
 1. Изучите проект.
 2. Инициализируйте проект, выполните код. 
 
+---
+
+### Решение 1
+
+![Screen_1_1](https://github.com/MrVanG0gh/ter_homework_02/blob/main/Screenshots/Screenshot_1_1.png)
 
 Приложите скриншот входящих правил «Группы безопасности» в ЛК Yandex Cloud.
 
