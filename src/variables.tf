@@ -32,5 +32,51 @@ variable "default_cidr" {
 variable "vpc_name" {
   type        = string
   default     = "develop"
-  description = "VPC network&subnet name"
+  description = "VPC network & subnet name"
+}
+
+### Vars for Ex.2
+
+variable "family_name" {
+  type        = string
+  default     = "ubuntu-2004-lts"
+  description = "Type of the OS"
+}
+
+variable "web_cores" {
+  type        = number
+  default     = "2"
+  description = "Number of cores for web-VM"
+}
+
+variable "web_memory" {
+  type        = number
+  default     = "1"
+  description = "Amount of memory for web-VM"
+}
+
+variable "web_core_fraction" {
+  type        = number
+  default     = "20"
+  description = "Core fraction for web-VM"
+}
+
+variable "preempt_on" {
+  type        = bool
+  default     = true
+  description = "Preemptible is always on"
+}
+variable "nat_is_on" {
+  type        = bool
+  default     = true
+  description = "NAT is on"
+}
+
+variable "common_metadata" {
+  description = "Common meta data"
+  type        = map(string)
+  default     = {
+    serial-port-enable = "1"
+    ssh-keys           = "ubuntu:ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMnceZd2rCKdINN9bbS0QQ5X4mubdFaheN6XcNHbb+u4"
+    }
 }
