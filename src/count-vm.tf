@@ -6,7 +6,7 @@ data "yandex_compute_image" "ubuntu" {
 resource "yandex_compute_instance" "web" {
   count             = 2
   name              = "web-${count.index + 1}"
-  # hostname          = "netology-develop-platform-web-${count.index}" # FQDN
+  hostname          = "default-develop-platform-web-${count.index + 1}" #
   platform_id       = "standard-v1"
   zone              = var.default_zone
 
