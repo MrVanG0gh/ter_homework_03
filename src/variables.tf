@@ -43,11 +43,7 @@ variable "web_memory" {
   description = "Amount of memory for web-VM"
 }
 
-variable "web_core_fraction" {
-  type        = number
-  default     = "20"
-  description = "Core fraction for web-VM"
-}
+
 
 variable "preempt_on" {
   type        = bool
@@ -60,9 +56,31 @@ variable "nat_is_on" {
   description = "NAT is on"
 }
 
+### Vars for Ex.3
 
+variable "each_vm" {
+  type          = list(object({
+    vm_name     = string
+    cpu         = number
+    ram         = number
+    disk_volume = number }))
+  default = [{ vm_name    = "main"
+              cpu         = "2"
+              ram         = "2"
+              disk_volume = "10" },
+            { vm_name     = "replica"
+              cpu         = "2"
+              ram         = "1"
+              disk_volume = "5" }]
+}
 
 ### Common vars
+
+variable "common_core_fraction" {
+  type        = number
+  default     = "20"
+  description = "Common core fraction"
+}
 
 variable "family_name" {
   type        = string
@@ -81,6 +99,7 @@ variable "common_metadata" {
   type        = map(string)
   default     = {
     serial-port-enable = "1"
-    ssh-keys           = "ubuntu:ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMnceZd2rCKdINN9bbS0QQ5X4mubdFaheN6XcNHbb+u4"
+    #ssh-keys           = "ubuntu:ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMnceZd2rCKdINN9bbS0QQ5X4mubdFaheN6XcNHbb+u4"
+    ssh-keys            = file("~/.ssh/id_ed25519.pub")
     }
 }

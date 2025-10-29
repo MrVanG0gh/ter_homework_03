@@ -4,6 +4,8 @@ data "yandex_compute_image" "ubuntu" {
 }
 
 resource "yandex_compute_instance" "web" {
+  depends_on = [yandex_compute_instance.db_replica]
+
   count             = 2
   name              = "web-${ count.index + 1}"
   hostname          = "${ yandex_vpc_network.develop.name }-web-${ count.index + 1 }"
@@ -13,7 +15,7 @@ resource "yandex_compute_instance" "web" {
   resources {
     cores           = var.web_cores
     memory          = var.web_memory
-    core_fraction   = var.web_core_fraction
+    core_fraction   = var.common_core_fraction
   }
 
   boot_disk {
