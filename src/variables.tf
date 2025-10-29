@@ -1,16 +1,19 @@
 ###cloud vars
 variable "token" {
   type        = string
+  default     = file("~/.authorized_key.json")
   description = "OAuth-token; https://cloud.yandex.ru/docs/iam/concepts/authorization/oauth-token"
 }
 
 variable "cloud_id" {
   type        = string
+  default     = "b1gd0ene28ce38jum5ol"
   description = "https://cloud.yandex.ru/docs/resource-manager/operations/cloud/get-id"
 }
 
 variable "folder_id" {
   type        = string
+  default     = "b1gh84ji5m46hok29kbf"
   description = "https://cloud.yandex.ru/docs/resource-manager/operations/folder/get-id"
 }
 
