@@ -43,6 +43,12 @@ variable "family_name" {
   description = "Type of the OS"
 }
 
+variable "zone_1a" {
+  type        = string
+  default     = "ru-central1-a"
+  description = "Default zone is ru-central-1a"
+}
+
 variable "web_cores" {
   type        = number
   default     = "2"

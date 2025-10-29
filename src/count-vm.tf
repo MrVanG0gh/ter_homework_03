@@ -8,6 +8,7 @@ resource "yandex_compute_instance" "web" {
   name              = "web-${count.index + 1}"
   # hostname          = "netology-develop-platform-web-${count.index}" # FQDN
   platform_id       = "standard-v1"
+  zone              = var.default_zone
 
   resources {
     cores           = var.web_cores
@@ -26,6 +27,7 @@ resource "yandex_compute_instance" "web" {
 
     subnet_id      = yandex_vpc_network.develop.id
     nat            = var.nat_is_on
+    security_group_ids = [yandex_vpc_security_group.example.id]
   }
 
   metadata = var.common_metadata
