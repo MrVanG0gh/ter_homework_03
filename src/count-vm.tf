@@ -25,7 +25,7 @@ resource "yandex_compute_instance" "web" {
   }
   network_interface {
 
-    subnet_id      = yandex_vpc_network.develop.id
+    subnet_id      = yandex_vpc_subnet.develop.id
     nat            = var.nat_is_on
     security_group_ids = [yandex_vpc_security_group.example.id]
   }
