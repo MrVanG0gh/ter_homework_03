@@ -12,7 +12,7 @@
 ### Внимание!! Обязательно предоставляем на проверку получившийся код в виде ссылки на ваш github-репозиторий!
 Убедитесь что ваша версия **Terraform** ~>1.12.0
 
-![Screen_0_1](https://github.com/MrVanG0gh/ter_homework_02/blob/main/Screenshots/Screenshot_0_1.png)
+![Screen_0_1](https://github.com/MrVanG0gh/ter_homework_03/blob/main/Screenshots/Screenshot_0_1.png)
 
 Теперь пишем красивый код, хардкод значения не допустимы!
 ------
@@ -27,7 +27,7 @@
 
 ### Решение 1
 
-![Screen_1_1](https://github.com/MrVanG0gh/ter_homework_02/blob/main/Screenshots/Screenshot_1_1.png)
+![Screen_1_1](https://github.com/MrVanG0gh/ter_homework_03/blob/main/Screenshots/Screenshot_1_1.png)
 
 Приложите скриншот входящих правил «Группы безопасности» в ЛК Yandex Cloud.
 
