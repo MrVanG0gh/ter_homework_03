@@ -30,5 +30,7 @@ resource "yandex_compute_instance" "db_replica" {
     nat            = var.nat_is_on
     security_group_ids = [yandex_vpc_security_group.example.id]
   }
+
   metadata = var.common_metadata
+
 }
