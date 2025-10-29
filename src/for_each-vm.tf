@@ -1,6 +1,7 @@
 # Ex.2-2
 resource "yandex_compute_instance" "db_replica" {
-  for_each         = var.each_vm
+  # for_each         = var.each_vm
+  for_each         = { for i in var.each_vm : i.vm_name => i }
 
   name             = each.value.vm_name
   hostname         = join("-", yandex_vpc_network.develop.name, each.value.vm_name)
