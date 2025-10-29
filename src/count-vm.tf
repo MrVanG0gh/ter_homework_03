@@ -5,9 +5,9 @@ data "yandex_compute_image" "ubuntu" {
 
 resource "yandex_compute_instance" "web" {
   count             = 2
-  name              = "web-${count.index + 1}"
-  hostname          = "default-develop-platform-web-${count.index + 1}" #
-  platform_id       = "standard-v1"
+  name              = "web-${ count.index + 1}"
+  hostname          = "${ yandex_vpc_network.develop.name }-web-${ count.index + 1 }"
+  platform_id       = var.common_platform
   zone              = var.default_zone
 
   resources {

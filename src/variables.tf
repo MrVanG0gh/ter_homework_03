@@ -1,10 +1,4 @@
 ###cloud vars
-/* variable "token" {
-   type        = string
-  default     = file("~/token")
-  description = "OAuth-token; https://cloud.yandex.ru/docs/iam/concepts/authorization/oauth-token"
-}
- */
 
 variable "cloud_id" {
   type        = string
@@ -37,12 +31,6 @@ variable "vpc_name" {
 
 ### Vars for Ex.2
 
-variable "family_name" {
-  type        = string
-  default     = "ubuntu-2004-lts"
-  description = "Type of the OS"
-}
-
 variable "web_cores" {
   type        = number
   default     = "2"
@@ -72,8 +60,24 @@ variable "nat_is_on" {
   description = "NAT is on"
 }
 
+
+
+### Common vars
+
+variable "family_name" {
+  type        = string
+  default     = "ubuntu-2004-lts"
+  description = "Type of the OS"
+}
+
+variable "common_platform" {
+  type        = string
+  default     = "standard-v1"
+  description = "Common platform"
+}
+
 variable "common_metadata" {
-  description = "Common meta data"
+  description = "Common meta data for SSH"
   type        = map(string)
   default     = {
     serial-port-enable = "1"
