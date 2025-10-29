@@ -1,0 +1,33 @@
+# Ex.2
+data "yandex_compute_image" "ubuntu" {
+  family            = var.family_name
+}
+
+resource "yandex_compute_instance" "web" {
+  count             = 2
+  name              = "web-${count.index + 1}"
+  # hostname          = "netology-develop-platform-web-${count.index}" # FQDN
+  platform_id       = "standard-v1"
+
+  resources {
+    cores           = var.web_cores
+    memory          = var.web_memory
+    core_fraction   = var.web_core_fraction
+  }
+  boot_disk {
+    initialize_params {
+      image_id     = data.yandex_compute_image.ubuntu.image_id
+    }
+  }
+  scheduling_policy {
+    preemptible    = var.preempt_on
+  }
+  network_interface {
+
+    subnet_id      = yandex_vpc_network.develop.id
+    nat            = var.nat_is_on
+  }
+
+  metadata = var.common_metadata
+
+}
