@@ -37,3 +37,4 @@ resource "yandex_compute_instance" "web" {
   metadata = merge(var.common_metadata, local.metadata)
 
 }
+
