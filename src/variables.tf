@@ -96,7 +96,7 @@ variable "vdisks" {
     name = "vdisk"
     counter = 3
     type = "network-hdd"
-    size = 5
+    size = 1
   }
   description = "Info about disks"
 }
