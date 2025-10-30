@@ -101,6 +101,23 @@ variable "vdisks" {
   description = "Info about disks"
 }
 
+variable "storage_vm" {
+  type = object({
+    name = string
+    hostname = string
+    cores = number
+    memory = number
+    core_fraction = number
+  })
+  default = {
+    name = "storage"
+    hostname = "storage"
+    cores = 2
+    memory = 1
+    core_fraction = 20
+  }
+}
+
 ### Common vars
 
 variable "common_core_fraction" {
