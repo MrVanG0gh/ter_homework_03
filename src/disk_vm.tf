@@ -27,10 +27,10 @@ resource "yandex_compute_instance" "storage" {
     }
   }
 
-  dynamic "secondary_disks" {
+  dynamic "secondary_disk" {
     for_each = yandex_compute_disk.virtual_disks.*.id
     content {
-      disk_id = secondary_disks.value
+      disk_id = secondary_disk.value
     }
   }
 
