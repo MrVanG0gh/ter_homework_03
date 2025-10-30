@@ -8,3 +8,4 @@ resource "local_file" "inventory" {
   })
   filename = "${abspath(path.module)}/hosts.cfg"
 }
+
